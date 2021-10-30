@@ -16,7 +16,7 @@ public class Main {
             }
         //graph.print();
         Way theBestWay = new Way(INF);
-        for(int i=1; i<=20; i++){                                                                            //set to 1000
+        for(int i=1; i<=1000; i++){                                                                            //set to 1000
             Way currBestWay = graph.iterate(1, 1, 0.3);
             //updating the answer
             if(theBestWay.compareTo(currBestWay) > 0){
@@ -27,7 +27,9 @@ public class Main {
                 System.out.println("iteration " + i);
                 System.out.println("the best way now is " + theBestWay);
                 System.out.println("==}>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+                graph.printTay();
             }
         }
+
     }
 }

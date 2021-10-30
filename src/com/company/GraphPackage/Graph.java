@@ -36,7 +36,6 @@ public class Graph {
         for(int i = 0; i < numberOfVertexes; i++){
             for(int j = i+1; j<numberOfVertexes; j++){
                 tay[i][j] = tay[j][i] = (new Random().nextInt())%3 + 1;
-                //tay[i][j] = tay[j][i] = 1;
             }
         }
         //making new colony
@@ -60,7 +59,6 @@ public class Graph {
 
             Way theWayOfCurrentBeatle = new Way(0);                 //the current way
             int startVertex = (abs(new Random().nextInt())) % dist.length;
-            //var startVertex = 0;
             Set<Integer> usedVertexes = new HashSet<>();
             int currentVertex = startVertex;
 
@@ -68,6 +66,7 @@ public class Graph {
                 theWayOfCurrentBeatle.addNewVertex(currentVertex, (v==0) ? 0 : dist[theWayOfCurrentBeatle.getLastVertexInWay()][currentVertex]);
                 usedVertexes.add(currentVertex);
                 List<Integer> availableVertexes = new ArrayList<>();
+
                 for(int j = 0; j < dist.length; j++){//loop for vertexes to add into available
                     if(!usedVertexes.contains(j) && dist[currentVertex][j]>0){
                         availableVertexes.add(j);
@@ -106,6 +105,7 @@ public class Graph {
                 tay[vertexesOfCurrentWay.get(i)][vertexesOfCurrentWay.get(i+1)] = (int)(1-p) * _tay + deltaTay;
             }
         }
+
         return Collections.min(allTheWays);
     }
 
@@ -118,4 +118,12 @@ public class Graph {
         }
     }
 
+    public void printTay(){
+        for(int i=0; i<tay.length; i++){
+            for(int j=0; j<tay[i].length; j++){
+                System.out.format("%4d", tay[i][j]);
+            }
+            System.out.println("");
+        }
+    }
 }
