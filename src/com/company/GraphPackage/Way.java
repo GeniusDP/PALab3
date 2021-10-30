@@ -19,10 +19,18 @@ public class Way implements Comparable<Way>{
         return cost;
     }
 
+    public List<Integer> getVertexes() {
+        return vertexes;
+    }
+
     public void addNewVertex(int newVertex, int value){
         vertexes.add(newVertex);
         if(vertexes.size() > 0)
             cost += value;
+    }
+
+    public int getLastVertexInWay() {
+        return vertexes.size()>0 ? vertexes.get(vertexes.size()-1) : -1;
     }
 
     @Override
