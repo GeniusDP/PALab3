@@ -89,7 +89,7 @@ public class Graph {
                         probabilityOfAvailableVertex.add(P);
                     }
                     if(probabilityOfAvailableVertex.size()>0) {
-                        double randomZone = Math.random();
+                        /*double randomZone = Math.random();
                         double currSum = 0;
                         int i = 0;
                         while( !(currSum < randomZone && currSum + probabilityOfAvailableVertex.get(i) > randomZone)
@@ -98,12 +98,12 @@ public class Graph {
                             i++;
                         }
                         i = Math.min(i, probabilityOfAvailableVertex.size()-1);//0.1 + 0.1 + 0.1 != 0.3 problems with accuracy may be
-                        currentVertex = availableVertexes.get(i);
+                        currentVertex = availableVertexes.get(i);*/
 
                         //for greedy beatle
-                       /* double minProb = Collections.min(probabilityOfAvailableVertex);
-                        int minInProbabilityIndex = probabilityOfAvailableVertex.indexOf(minProb);
-                        currentVertex = availableVertexes.get(minInProbabilityIndex);*/
+                        double maxProb = Collections.max(probabilityOfAvailableVertex);
+                        int maxInProbabilityIndex = probabilityOfAvailableVertex.indexOf(maxProb);
+                        currentVertex = availableVertexes.get(maxInProbabilityIndex);
                     }
             }
             theWayOfCurrentBeatle.addNewVertex(startVertex, dist[theWayOfCurrentBeatle.getLastVertexInWay()][startVertex]);//start vertex is also the last

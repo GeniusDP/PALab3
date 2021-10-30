@@ -6,10 +6,7 @@ import java.util.List;
 public class Way implements Comparable<Way>{
     private int cost;
     private List<Integer> vertexes;
-    {
-        cost = 0;
-        vertexes = null;
-    }
+
     public Way(int cost) {
         this.cost = cost;
         vertexes = new ArrayList<>();
