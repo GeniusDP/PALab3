@@ -22,7 +22,7 @@ public class Main {
             if(theBestWay.compareTo(currBestWay) > 0){
                 theBestWay = currBestWay;
             }
-            if(i % 20 == 0){
+            if(i % 1 == 0){
                 System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<{==");
                 System.out.println("iteration " + i);
                 System.out.println("the best way now is " + theBestWay);

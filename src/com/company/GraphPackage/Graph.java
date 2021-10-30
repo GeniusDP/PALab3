@@ -89,9 +89,18 @@ public class Graph {
                         probabilityOfAvailableVertex.add(P);
                     }
                     if(probabilityOfAvailableVertex.size()>0) {
-                        double minProb = Collections.min(probabilityOfAvailableVertex);
+                        double randomZone = Math.random();
+                        double currSum = 0;
+                        int i = 0;
+                        while( !(currSum < randomZone && currSum + probabilityOfAvailableVertex.get(i) > randomZone)
+                                && i < probabilityOfAvailableVertex.size() ){
+                            currSum += probabilityOfAvailableVertex.get(i);
+                            i++;
+                        }
+                        i = Math.min(i, probabilityOfAvailableVertex.size()-1);//0.1 + 0.1 + 0.1 != 0.3 problems with accuracy may be
+                       /* double minProb = Collections.min(probabilityOfAvailableVertex);
                         int minInProbabilityIndex = probabilityOfAvailableVertex.indexOf(minProb);
-                        currentVertex = availableVertexes.get(minInProbabilityIndex);
+                        currentVertex = availableVertexes.get(minInProbabilityIndex);*/
                     }
             }
             theWayOfCurrentBeatle.addNewVertex(startVertex, dist[theWayOfCurrentBeatle.getLastVertexInWay()][startVertex]);//start vertex is also the last
@@ -102,7 +111,7 @@ public class Graph {
             List<Integer> vertexesOfCurrentWay = theWayOfCurrentBeatle.getVertexes();//needed to calculate tay difference;
             for(int i=0; i<vertexesOfCurrentWay.size()-1; i++){
                 int _tay = tay[vertexesOfCurrentWay.get(i)][vertexesOfCurrentWay.get(i+1)];
-                tay[vertexesOfCurrentWay.get(i)][vertexesOfCurrentWay.get(i+1)] = (int)(1-p) * _tay + deltaTay;
+                tay[vertexesOfCurrentWay.get(i)][vertexesOfCurrentWay.get(i+1)] = (int)((1-p) * _tay + deltaTay);
             }
         }
 
