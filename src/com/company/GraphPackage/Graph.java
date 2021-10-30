@@ -35,7 +35,7 @@ public class Graph {
         //making tay array. gives start values [1..3]
         for(int i = 0; i < numberOfVertexes; i++){
             for(int j = i+1; j<numberOfVertexes; j++){
-                tay[i][j] = tay[j][i] = (new Random().nextInt())%3 + 1;
+                tay[i][j] = tay[j][i] = (abs(new Random().nextInt()))%3 + 1;
             }
         }
         //making new colony
@@ -98,6 +98,9 @@ public class Graph {
                             i++;
                         }
                         i = Math.min(i, probabilityOfAvailableVertex.size()-1);//0.1 + 0.1 + 0.1 != 0.3 problems with accuracy may be
+                        currentVertex = availableVertexes.get(i);
+
+                        //for greedy beatle
                        /* double minProb = Collections.min(probabilityOfAvailableVertex);
                         int minInProbabilityIndex = probabilityOfAvailableVertex.indexOf(minProb);
                         currentVertex = availableVertexes.get(minInProbabilityIndex);*/
