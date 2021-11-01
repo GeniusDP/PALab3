@@ -19,6 +19,7 @@ import static com.company.Constants.INF;
 3 5 10
 4 5 42
  */
+
 public class Main {
     public static void main(String[] args) {
         Graph graph = new Graph();
