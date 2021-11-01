@@ -29,6 +29,7 @@ public class Main {
             }
         //graph.print();
         Way theBestWay = new Way(INF);
+        long timer = System.currentTimeMillis();
         for(int i=1; i<=1000; i++){                                                                            //set to 1000
             Way currBestWay = graph.iterate(2, 3, 0.3);
             //updating the answer
@@ -47,5 +48,6 @@ public class Main {
             }
         }
         System.out.println("THE BEST WAY IS: " + theBestWay);
+        System.out.println("Program worked for " + (System.currentTimeMillis() - timer));
     }
 }
