@@ -116,6 +116,13 @@ public class Graph {
                 int _tay = tay[vertexesOfCurrentWay.get(i)][vertexesOfCurrentWay.get(i+1)];
                 tay[vertexesOfCurrentWay.get(i)][vertexesOfCurrentWay.get(i+1)] = (int)((1-p) * _tay + deltaTay);
             }
+            /*
+            //now all the ways change tay
+            for(int i = 0; i < tay.length; ++i){
+                for (int j = 0; j < tay[i].length; j++) {
+                    tay[i][j] = Math.max(0, (int)((1-p) * tay[i][j] + deltaTay));
+                }
+            }*/
         }
 
         return Collections.min(allTheWays);

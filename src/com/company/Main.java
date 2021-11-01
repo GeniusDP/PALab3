@@ -49,6 +49,6 @@ public class Main {
             }
         }
         System.out.println("THE BEST WAY IS: " + theBestWay);
-        System.out.println("Program worked for " + (System.currentTimeMillis() - timer));
+        System.out.println("Program worked for " + (System.currentTimeMillis() - timer)/1000. + " sec");
     }
 }
