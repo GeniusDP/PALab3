@@ -110,7 +110,8 @@ public class Graph {
             allTheWays.add(theWayOfCurrentBeatle);
 
             //changing tay
-            int deltaTay = dist.length * 150 / theWayOfCurrentBeatle.getCost();
+            int deltaTay = dist.length * 10 / theWayOfCurrentBeatle.getCost();
+            //System.out.println(deltaTay);
             List<Integer> vertexesOfCurrentWay = theWayOfCurrentBeatle.getVertexes();//needed to calculate tay difference;
             for(int i=0; i<vertexesOfCurrentWay.size()-1; i++){
                 int _tay = tay[vertexesOfCurrentWay.get(i)][vertexesOfCurrentWay.get(i+1)];
